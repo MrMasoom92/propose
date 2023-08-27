@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+  </style>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Patrick Hand', cursive;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: sans-serif;
+    background-color: powderblue;
+    overflow: hidden;
+}
+
+/* Book */
+.book {
+    position: relative;
+    width: 750px;
+    height: 900px;
+    transition: transform 0.5s;
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+    text-align: center;
+}
+
+.front,
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    padding-top: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+#f1{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#b3{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    transform: rotateY(180deg);
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+button {
+    border: none;
+    background-color: #0773D9;
+    cursor: pointer;
+    transition: transform 0.5s;
+    font-size: 1.7rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    padding-bottom: 50px;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: #636363;
+}
+
+i {
+    font-size: 50px;
+    color: gray;
+}
+
+/* Paper stack order */
+#p1 {
+    z-index: 3;
+}
+
+#p2 {
+    z-index: 2;
+}
+
+#p3 {
+    z-index: 1;
+}
+
+@media screen and (max-width: 700px) {
+  .book {
+    width: 170px;
+    height: 250px;
+  }
+  
+  .paper{
+    font-size: .6rem;
+  }
+  
+  button{
+    position: absolute;
+    bottom: 20px;
+  }
+  
+  #next-btn{
+    right: 100px;
+  }
+
+  #prev-btn{
+    left:100px;
+  }
+  button{
+    border: none;
+    background-color: #0773D9;
+    cursor: pointer;
+    transition: transform 0.5s;
+    font-size: 1.7rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <!-- Previous Button -->
+  <button id="prev-btn">
+    <p>
+        &larr;
+    </p>
+  </button>
+  <!-- Book -->
+  <div id="book" class="book">
+    <!-- Paper 1 -->
+    <div id="p1" class="paper">
+      <div class="front">
+        <div id="f1" class="front-content">
+          <h1 style="font-size: 20px;">This is for my love <br>My Begam✨❤</h1>
+        </div>
+      </div>
+      <div class="back">
+        <div id="b1" class="back-content" style="font-size: 7.4px;">
+          <h1>First of thank you soo much for choosing me as your partner. Since that day when i saw you i fell in love with you it's like Love at first sight. Then the day finally comes when i propose you, and you accept my proposal at that moment my heart just forgeted to beat for a second. <br> I Love You💞❤</h1>
+        </div>
+      </div>
+    </div>
+    <!-- Paper 2 -->
+    <div id="p2" class="paper">
+      <div class="front">
+        <div id="f2" class="front-content" style="font-size: 7.4px;">
+          <h1>At the starting of our relation ship we both don't even trust each other😅, but now the time was changed now we trust each other blindly🥰. And also i respect the efforts you are putting on me. You make me feel realy happy when i am with you, and also when i am with i act like a chaild i don't know why😅 but</h1>
+        </div>
+      </div>
+      <div class="back">
+        <div id="b2" class="back-content" style="font-size: 7.3px;">
+          <h1>whenever i am with you my childish mode is onn because i know you are the only who can handle my inner child✨💕. You become my queen of my heart also my heart is belong to you and i beacomes your king. Our journey is very interesting you don't even want to see my face but now you feel happy when you see me.😁</h1>
+        </div>
+      </div>
+    </div>
+    <!-- Paper 3 -->
+    <div id="p3" class="paper">
+      <div class="front">
+        <div id="f3" class="front-content" style="font-size: 7.2px;">
+          <h1>You are my Sharmili ✨❤ You are my Dumbo😁 You are my Shona😘 and one day i will say this that you are my Wife ✨🥰💖 In Sha Allah. I love you meri gulabo tum haste hue bht pyari lgti ho aise hi haste rha kro smjhi rote hue lagti ho cute but hasta hua chera tumhara khila hua gulaab jaisi lagta hai meri jaan✨</h1>
+        </div>
+      </div>
+      <div class="back">
+        <div id="b3" class="back-content" style="font-size: 7px;">
+          <h1>Umeed karte hai tumko accha lagega bht din ke baad baat kuch banaye hai tumhare liye. <br> I love you meri Begam✨❤ Mwwaahh😘😘</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button id="next-btn">
+    &rarr;
+  </button>
+  <script>
+    // References to DOM Elements
+const prevBtn = document.querySelector("#prev-btn");
+const nextBtn = document.querySelector("#next-btn");
+const book = document.querySelector("#book");
+
+const paper1 = document.querySelector("#p1");
+const paper2 = document.querySelector("#p2");
+const paper3 = document.querySelector("#p3");
+
+// Event Listener
+prevBtn.addEventListener("click", goPrevPage);
+nextBtn.addEventListener("click", goNextPage);
+
+// Business Logic
+let currentLocation = 1;
+let numOfPapers = 3;
+let maxLocation = numOfPapers + 1;
+
+function openBook() {
+  if (window.innerWidth <= 700) {
+    book.style.transform = "translateX(50%)";
+    prevBtn.style.transform = "translateX(-50px)";
+    nextBtn.style.transform = "translateX(50px)";
+  }else{
+  
+  book.style.transform = "translateX(50%)";
+  prevBtn.style.transform = "translateX(-180px)";
+  nextBtn.style.transform = "translateX(180px)";
+  }
+  
+}
+
+function closeBook(isAtBeginning) {
+  
+  if (isAtBeginning) {
+    book.style.transform = "translateX(0%)";
+  } else {
+    book.style.transform = "translateX(100%)";
+  }
+
+  prevBtn.style.transform = "translateX(0px)";
+  nextBtn.style.transform = "translateX(0px)";
+}
+
+function goNextPage() {
+  if (currentLocation < maxLocation) {
+    switch (currentLocation) {
+      case 1:
+        openBook();
+        paper1.classList.add("flipped");
+        paper1.style.zIndex = 1;
+        break;
+      case 2:
+        paper2.classList.add("flipped");
+        paper2.style.zIndex = 2;
+        break;
+      case 3:
+        paper3.classList.add("flipped");
+        paper3.style.zIndex = 3;
+        closeBook(false);
+        break;
+      default:
+        throw new Error("unkown state");
+    }
+    currentLocation++;
+  }
+}
+
+function goPrevPage() {
+  if (currentLocation > 1) {
+    switch (currentLocation) {
+      case 2:
+        closeBook(true);
+        paper1.classList.remove("flipped");
+        paper1.style.zIndex = 3;
+        break;
+      case 3:
+        paper2.classList.remove("flipped");
+        paper2.style.zIndex = 2;
+        break;
+      case 4:
+        openBook();
+        paper3.classList.remove("flipped");
+        paper3.style.zIndex = 1;
+        break;
+      default:
+        throw new Error("unkown state");
+    }
+
+    currentLocation--;
+  }
+}
+  </script>
+</body>
+</html>
